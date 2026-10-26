@@ -1,11 +1,11 @@
 # Cahier des charges — template_mobile_app
 
-Version : 0.1 — 26 octobre 2026  
+Version : 0.2 — 26 octobre 2026  
 Statut : proposition de cadrage ; aucune implémentation à ce stade.
 
 ## 1. Objectif
 
-Réduire le temps nécessaire pour démarrer et livrer une application mobile iOS et Android en regroupant des ressources sélectionnées, des recettes d’intégration, des composants réutilisables et des projets de départ.
+Accompagner la création d’une app depuis la recherche du besoin et le design jusqu’à la livraison et aux améliorations. Réduire le temps nécessaire pour démarrer et livrer une application mobile iOS et Android en regroupant des ressources sélectionnées, des recettes d’intégration, des composants réutilisables et des projets de départ.
 
 Le dépôt doit permettre de partir d’un besoin (« ajouter une connexion », « afficher une liste hors ligne », « publier sur les stores »), de choisir une solution adaptée et de l’intégrer sans reconstruire les mêmes fondations.
 
@@ -15,7 +15,7 @@ Public visé : développeurs indépendants et petites équipes, notamment habitu
 
 Le dépôt évoluera en trois couches :
 
-1. **Catalogue Awesome** : bibliothèques, outils et documentations classés par besoin, avec recommandations motivées et limites.
+1. **Catalogue Awesome** : méthodes de recherche et de conception, modèles de documents, kits de design, bibliothèques, outils et documentations classés par besoin, avec recommandations motivées et limites.
 2. **Recettes et composants** : exemples minimaux, code réutilisable et instructions d’intégration.
 3. **Starters** : projets cohérents assemblant les éléments validés, avec application de démonstration.
 
@@ -49,6 +49,52 @@ Recommandation de méthode : retenir une seule stack pour le premier starter. Le
 
 Priorités : **P0** = nécessaire au premier socle utilisable ; **P1** = extension courante ; **P2** = besoin avancé ou spécialisé. Ces niveaux concernent la future réalisation, pas le contenu déjà disponible.
 
+### 4.1. Avant le développement : recherche, produit et design
+
+Le dépôt doit aussi aider à décider quoi construire, pour qui et sous quelle forme. Ces étapes précèdent le choix détaillé des composants et se poursuivent après les premiers retours. Leur profondeur s’adapte au projet : pour une petite app, des fiches courtes peuvent suffire, mais les hypothèses doivent rester visibles.
+
+| Section | Besoins couverts et éléments réutilisables | Exigence de validation | Priorité |
+| --- | --- | --- | --- |
+| A01 — Problème et vision produit | Modèle de brief : problème, public, contexte d’usage, valeur apportée, objectifs, contraintes et exclusions | Un problème précis et un résultat attendu sont formulés ; expliquer pourquoi une app mobile convient | P0 |
+| A02 — Recherche utilisateur | Guide d’entretien, recrutement, observation, questionnaire si pertinent, synthèse des besoins et difficultés | Distinguer faits observés, déclarations, hypothèses et inconnues ; conserver des notes anonymisées avec accord des participants | P0 |
+| A03 — Marché et applications existantes | Grille comparative des concurrents directs et indirects, parcours, prix, avis de stores et solutions actuelles | Sources et dates indiquées ; opportunités reliées aux besoins ; avis publics traités comme indices à vérifier | P0 |
+| A04 — Publics et situations d’usage | Segments, profils fondés sur la recherche, tâches à accomplir et parcours actuel | Les situations couvrent mobilité, interruptions, connexion limitée et besoins d’accessibilité pertinents | P0 |
+| A05 — Proposition de valeur et viabilité | Canevas de valeur, différenciation, hypothèses d’adoption, coûts récurrents, modèle économique si pertinent | Hypothèses risquées explicites ; méthode de vérification et critères de poursuite ou de révision définis | P0 pour la valeur ; modèle économique selon le projet |
+| A06 — Périmètre de la première version | Matrice de priorisation, scénarios, exigences, critères d’acceptation et liste des fonctionnalités reportées | Chaque fonctionnalité retenue répond à un besoin ; parcours central réalisable avec un périmètre limité | P0 |
+| A07 — Architecture de l’information et UX | Plan des écrans, navigation, parcours utilisateur, flux de tâches et inventaire du contenu | Départ, arrivée, retours et cas alternatifs définis ; inscription et permissions demandées au moment utile | P0 |
+| A08 — Wireframes | Gabarits basse fidélité pour les écrans et leurs états, variantes et annotations | Le parcours principal peut être parcouru avant le travail visuel ; contenu réaliste et cas d’erreur présents | P0 |
+| A09 — Direction artistique et UI | Brief visuel, planche de références sourcées, couleurs, typographie, iconographie, maquettes et mouvements utiles | Lisibilité, contrastes, texte agrandi, zones tactiles et conventions iOS/Android vérifiés ; droits des assets identifiés | P0 |
+| A10 — Système de design réutilisable | Tokens, composants, variantes, états, règles de composition et correspondance design/code | Chaque composant de maquette possède une définition exploitable par le développement ; lien avec la section 03 | P0 |
+| A11 — Prototype et tests utilisateurs | Prototype interactif, scénarios de test, guide de session, grille d’observation et rapport de corrections | Des personnes du public visé essaient les tâches principales ; difficultés, couverture et limites consignées ; blocages corrigés puis revérifiés | P0 |
+| A12 — Préparation du développement | Dossier de transmission : maquettes, comportements, textes, assets exportables, règles adaptatives, backlog et faisabilité | Un développeur peut comprendre chaque écran sans deviner ; risques techniques explorés ; questions ouvertes assignées | P0 |
+| A13 — Lancement et boucle de retour | Plan de bêta, recrutement des testeurs, fiche store, assistance, indicateurs et collecte de retours | Définir comment observer la valeur apportée et prioriser les améliorations ; collecte proportionnée des données | P1 |
+
+### 4.2. Livrables réutilisables de préparation
+
+Le catalogue devra proposer des méthodes, outils et modèles pour ces étapes, avec exemples remplis et versions vierges :
+- brief produit et registre des hypothèses ;
+- guide d’entretien, note d’information et synthèse de recherche anonymisée ;
+- grille d’analyse des apps et de leurs avis ;
+- fiche de situation d’usage et carte de parcours ;
+- définition du MVP, matrice de priorisation et critères de réussite ;
+- plan des écrans, flux utilisateur et checklist des états ;
+- kit de wireframes, brief visuel et fiche de composant ;
+- protocole de test de prototype et journal des décisions ;
+- checklist de transmission au développement et plan de bêta.
+
+Les modèles restent utilisables quel que soit l’outil de design choisi. Le catalogue pourra référencer des kits et fichiers éditables, en précisant format, licence, coût et compatibilité. Il ne contient à ce stade aucun fichier de design ni résultat de recherche réel.
+
+### 4.3. Points de passage avant de coder une application
+
+1. **Problème cadré** : public, situation d’usage, éléments de recherche et hypothèses documentés.
+2. **Solution délimitée** : valeur attendue, parcours principal, première version et indicateurs définis.
+3. **Expérience vérifiée** : prototype testé, principaux blocages corrigés et limites connues explicites.
+4. **Développement préparé** : maquettes et états décrits, assets disponibles et faisabilité des fonctions à risque examinée.
+
+Ces points servent à réduire les décisions implicites. Ils ne nécessitent pas de longs documents ni une recherche exhaustive. Une expérimentation technique courte peut être menée plus tôt pour vérifier une contrainte ; ses résultats alimentent les choix produit et design.
+
+### 4.4. Développement, livraison et maintenance
+
 | Section | Besoins couverts et éléments réutilisables | Exigence de validation | Priorité |
 | --- | --- | --- | --- |
 | 01 — Démarrage et environnement | Prérequis, installation, émulateurs, appareil réel, configuration, dépannage | Un développeur suit les commandes depuis un environnement propre ; contraintes macOS/Xcode pour iOS explicites | P0 |
@@ -78,8 +124,8 @@ Priorités : **P0** = nécessaire au premier socle utilisable ; **P1** = extensi
 
 Chaque entrée du catalogue contient :
 - nom, lien officiel et problème résolu ;
-- catégorie : bibliothèque, service, composant, recette ou starter ;
-- stack et plateformes compatibles, versions vérifiées ;
+- catégorie : méthode, modèle documentaire, kit de design, bibliothèque, service, composant, recette ou starter ;
+- stack et plateformes compatibles, versions vérifiées ; pour un modèle ou kit de design, format et outils compatibles ;
 - raison du choix et cas où une alternative convient mieux ;
 - licence du code ; tarif ou limites gratuites pour un service ;
 - dépendances, permissions et compte externe éventuellement requis ;
@@ -129,6 +175,10 @@ starters/
 examples/
   ... application de démonstration
 templates/
+  recherche-produit/
+    ... briefs, entretiens, analyse et priorisation
+  design/
+    ... parcours, wireframes, tests et transmission
   fiche-ressource.md
   fiche-composant.md
 CONTRIBUTING.md
@@ -154,7 +204,8 @@ Les données simulées permettent de lancer la démonstration sans service exter
 ## 9. Critères d’acceptation
 
 ### Livraison documentaire actuelle
-- Les grandes étapes d’une app mobile, du démarrage à la maintenance, sont couvertes.
+- Les grandes étapes d’une app mobile, de la recherche du besoin au design, au développement et à la maintenance, sont couvertes.
+- Les livrables de recherche, produit et design ainsi que les points de passage avant développement sont définis.
 - Chaque section décrit les éléments attendus, sa priorité et une condition de validation.
 - Le catalogue, les composants et les starters ont des rôles distincts.
 - Les choix encore ouverts et les futurs livrables sont explicitement identifiés.
@@ -174,7 +225,9 @@ Objectif initial à mesurer : obtenir un premier écran sur un appareil ou un si
 
 | Étape | Livrables | Condition de passage |
 | --- | --- | --- |
-| A — Cadrage | Ce cahier des charges, priorités, choix techniques à décider | Périmètre et stack de référence retenus avant le code |
+| A — Cadrage du dépôt | Ce cahier des charges, priorités, choix techniques à décider | Périmètre documentaire retenu ; stack choisie avant les composants |
+| A1 — Boîte à outils recherche et produit | Modèles de brief, entretien, analyse des apps, hypothèses et MVP | Modèles vierges accompagnés d’exemples identifiés comme fictifs |
+| A2 — Boîte à outils UX/UI | Parcours, wireframes, système de design, protocole de test et transmission | Un exemple permet de suivre le chemin du besoin au prototype puis aux spécifications |
 | B — Catalogue initial | Fiches P0, critères de sélection, guide de contribution | Recommandations documentées ; statuts honnêtes ; liens vérifiés |
 | C — Socle | Starter, navigation, thème, UI, configuration et démonstration | Démarrage reproductible sur les deux plateformes |
 | D — Parcours complet | API, formulaires, compte, stockage et erreurs | Parcours démonstrateur et cas d’échec vérifiés |
