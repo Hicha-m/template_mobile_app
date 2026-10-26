@@ -12,6 +12,10 @@ Lire le [cahier des charges](docs/cahier-des-charges.md) : objectifs, 13 section
 
 Les sections couvrent d’abord le cadrage du besoin, la recherche utilisateur, l’analyse des apps existantes, la définition du MVP, les parcours UX, les wireframes, le design UI, le prototypage et les tests utilisateurs, puis le démarrage, l’architecture, l’interface, la navigation, les écrans, les formulaires, l’authentification, les API, le stockage hors ligne, les permissions, les médias, les notifications, la recherche, les capacités natives, les paiements, l’accessibilité, la sécurité, les tests, la performance, la publication, les services métier et la maintenance.
 
+## Langages et frameworks
+
+Consulter le [comparatif des langages et frameworks](docs/langages-et-frameworks.md) : TypeScript/JavaScript, Dart, Kotlin, Swift, C#, approches web et besoins spécialisés. Le guide distingue les langages, les frameworks et le backend, puis précise ce qui peut être réutilisé entre stacks.
+
 ## Principe de réutilisation
 
 Partir d’un besoin, choisir une ressource adaptée à sa stack et intégrer un élément documenté. Les recommandations devront préciser leurs limites, leur licence et les versions réellement vérifiées.
