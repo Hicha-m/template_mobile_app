@@ -1,6 +1,6 @@
 # Cahier des charges — template_mobile_app
 
-Version : 0.2 — 26 octobre 2026  
+Version : 0.3 — 26 octobre 2026  
 Statut : proposition de cadrage ; aucune implémentation à ce stade.
 
 ## 1. Objectif
@@ -33,11 +33,11 @@ Hors périmètre initial : créer un nouveau framework, maintenir plusieurs impl
 
 ## 3. Choix techniques à arbitrer
 
-Aucun framework n’est imposé par ce document.
+Aucun framework n’est imposé par ce document. Le [comparatif des langages et frameworks](langages-et-frameworks.md) présente les options natives, multiplateformes et web, leurs limites et les critères de choix.
 
 | Décision | Critères de choix | Moment |
 | --- | --- | --- |
-| Stack de référence : React Native/Expo, Flutter ou natif | Compétences, vitesse de démarrage, accès aux API natives, maintenance | Avant les premiers composants |
+| Stack de référence : React Native/Expo, Flutter, Kotlin/Swift natifs, Kotlin Multiplatform, .NET MAUI ou approche web | Compétences, vitesse de démarrage, accès aux API natives, maintenance | Avant les premiers composants |
 | Plateformes et versions minimales | Public cible, appareils disponibles, compatibilité des dépendances | Avant le starter |
 | Backend et authentification | Besoin de serveur, hébergement, coût, export des données | Avant le module de connexion |
 | Distribution du code | Copie documentée, paquet ou template ; simplicité de mise à jour | Avant la première livraison de code |
@@ -157,6 +157,7 @@ Arborescence indicative, à créer progressivement au moment des livraisons :
 README.md
 docs/
   cahier-des-charges.md
+  langages-et-frameworks.md
   choix-techniques.md
   demarrage.md
   publication.md
